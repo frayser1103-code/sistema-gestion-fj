@@ -1,2 +1,3 @@
-# sistema-gestion-fj
-Ejercicio 1: Sistema Integral de Gestión de Clientes, Servicios y  Reservas 
+# Sistema Integral de Gestión - Software FJ
+
+Proyecto en Python con POO y manejo de excepciones.
