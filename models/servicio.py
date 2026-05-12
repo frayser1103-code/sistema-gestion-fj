@@ -17,25 +17,27 @@ class Servicio(ABC):
         pass
 
 class ReservaSala(Servicio):
-    def calcular_costo(self, horas=1):
-        return self.precio * horas
+    def calcular_costo(self, horas=1, descuento=0.0):
+        total = self.precio * horas
+        return total - (total * (descuento / 100))
 
     def descripcion(self):
         return "Reserva de sala"
 
 class AlquilerEquipo(Servicio):
-    def calcular_costo(self, dias=1):
-        return self.precio * dias
+    def calcular_costo(self, dias=1, descuento=0.0):
+        total = self.precio * dias
+        return total - (total * (descuento / 100))
 
     def descripcion(self):
         return "Alquiler de equipos"
 
 class Asesoria(Servicio):
-    def calcular_costo(self, horas=1, experto=False):
+    def calcular_costo(self, horas=1, experto=False, descuento=0.0):
         total = self.precio * horas
         if experto:
             total *= 1.5
-        return total
+        return total - (total * (descuento / 100))
 
     def descripcion(self):
         return "Asesoría especializada"
